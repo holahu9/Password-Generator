@@ -1,67 +1,72 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+var submitBtn = document.getElementById("subBtn");
+var passwordText = document.getElementById("password");
+submitBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  generatePassword();
+});
+var pickNum = "false";
+var pickUpper = "false";
+var pickLower = "false";
+var pickSpecial = "false";
+
 // different password data types user choose put into arrays
-var num= "1234567890".split("");
-var specialChar = "!@#$%^&*()".split("");
-var lower = "abcdefghijklmnopqrstuvwxyz".split("");
-var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+var num= ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', ':', '"', '<', '>', '?', '"'];
+var lower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var upper =  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var yourPassword = [];
 
 // ask users to confirm how many characters they want to set for their password
-function generatepassword{
-var passLength = prompt( how many characters would you like? ( choose from 8-128 characters) );
+function generatePassword(){
+var passLength = prompt( "how many characters would you like? ( choose from 8-128 characters)" );
 passLength = parseInt(passLength);
-//if the answer is out of the range
-if (passlength<8 || passlength>128){
-  alert( password length must be between 8-128 characters, please enter again );  
-}
-
-else { 
-        var pickNum = confirm (would you like numbers in your password?);
+//if the answer is in the range
+if (passlength>8 && passlength<128){
+  
+        var pickNum = confirm ("would you like numbers in your password?");
       
-        var pickChar = confirm (would you like special characters in your password?);
+        var pickChar = confirm ("would you like special characters in your password?");
         
-        var pickLower = confirm (would you like lowercase characters in your password?);
+        var pickLower = confirm ("would you like lowercase characters in your password?");
         
-        var pickUpper = confirm (would you like uppercase characters in your password?);
+        var pickUpper = confirm ("would you like uppercase characters in your password?");
         
         //check options users pick
         if (pickNum){
-          yourPassword = yourPassword.concat(num)
-          console.log(yourPassword);
+          yourPassword = yourPassword.concat(num);
+          
         }
         
-        if (pickNum && pickChar){
-            yourPassword = yourPassword.concat(num, specialChar);
-            console.log(yourPassword);
+        if (pickChar){
+            yourPassword = yourPassword.concat(specialChar);
+           
           }
 
-        if (pickNum && pickChar && pickLower){
-            yourPassword = yourPassword.concat(num, specialChar, lower);
-            console.log(yourPassword);
+        if (pickLower){
+            yourPassword = yourPassword.concat(lower);
+            
           }
 
-        if (pickNum && pickChar && pickLower && pickUpper){
-          yourPassword = yourPassword.concat(num, specialChar, lower, upper);
-          console.log(yourPassword);
+        if (pickUpper){
+          yourPassword = yourPassword.concat(upper);
+          
         }
 
-      console.log("Your password options are: ");
-      console.log(yourPassword);
-    }
+     
     var randomPassword = "";
-      
+      //return value
     for (var i = 0; i < passLength; i++) {
-      randomPassword = randomPassword + yourPassword[Math.floor(Math.random() * yourPassword.length)];
-      console.log(randomPassword)
+      yourNewPassword = yourPassword + yourPassword[Math.floor(Math.random() * yourPassword.length)];
+      console.log(randomPassword);
     }
-    return randomPassword;
+    passwordText.textContent = yourNewPassword;
+}
+else{ alert("Must be between 6 and 128");
 }
 
-// Write password to the #password input
-function writePassword() {
-var password = generatePassword();
-var passwordText = document.querySelector("#password");
-
-passwordText.value = password;
+yourNewPassword=[];
 }
+
+
+
