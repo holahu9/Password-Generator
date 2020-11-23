@@ -4,7 +4,7 @@ var passwordText = document.getElementById("password");
 submitBtn.addEventListener("click", writePassword); 
 
 
-// different password data types user choose to put into an array
+// different password character types user choose to put into an array
 var num= ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', ':', '"', '<', '>', '?', '"'];
 var lower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -16,11 +16,11 @@ function generatePassword(){
     var passLength = prompt( "how many characters would you like? ( choose from 8-128 characters)" );
     passLength = parseInt(passLength);
     while(passLength<8 || passLength>128){
-      alert("Your passowrd must be between 8-128 characters. Please try again")
+      alert("Your password must be between 8-128 characters. Please try again")
       var passLength = prompt( "how many characters would you like? ( choose from 8-128 characters)" );
     }
 
- // ask user to confirm type of password they would like to include  
+ // ask user to confirm character type of password they would like to include  
   
         var pickNum = confirm ("would you like numbers in your password?");
       
@@ -30,7 +30,7 @@ function generatePassword(){
         
         var pickUpper = confirm ("would you like uppercase characters in your password?");
 
-//loop obove questions if user dont pick any type of password
+//loop obove questions if users dont pick any type of password
         
         while(pickNum ===false && pickChar ===false && pickLower ===false && pickUpper ===false){
           alert(" You must choose at least 1 type of password ");
@@ -46,7 +46,7 @@ function generatePassword(){
 
         var yourPassword = [];
 
-        //check options user picked
+        //check options user picks & initialize the yourPassword array
         if (pickNum){
           yourPassword = yourPassword.concat(num);
           
@@ -67,13 +67,15 @@ function generatePassword(){
           
         }
         console.log(yourPassword);
-     
+    
+    // create an emty string named yourNewPassword     
     var yourNewPassword = "";
-      //return value
+     // fill in the emty string by selecting random characters from array yourPassword
     for (var i = 0; i < passLength; i++) {
       yourNewPassword = yourNewPassword + yourPassword[Math.floor(Math.random() * yourPassword.length)];
       console.log(yourNewPassword);
     }
+    //return value
     return yourNewPassword;
     
   }
