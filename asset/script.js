@@ -1,6 +1,8 @@
-
+//access to HTML to get element by ID 
 var submitBtn = document.getElementById("generate");
 var passwordText = document.getElementById("password");
+
+// Add an event listener that fires when a user clicks a button "generate"
 submitBtn.addEventListener("click", writePassword); 
 
 
@@ -13,7 +15,7 @@ var yourPassword = [];
 
 // ask users to confirm how many characters they want to set for their password
 function generatePassword(){
-    var passLength = prompt( "how many characters would you like? ( choose from 8-128 characters)" );
+    var passLength = prompt( "how many characters would you like to be in your password? ( choose from 8-128 characters)" );
     passLength = parseInt(passLength);
     while(passLength<8 || passLength>128){
       alert("Your password must be between 8-128 characters. Please try again")
@@ -30,10 +32,10 @@ function generatePassword(){
         
         var pickUpper = confirm ("would you like uppercase characters in your password?");
 
-//loop obove questions if users dont pick any type of password
+//loop obove questions if users dont pick any character type of password
         
         while(pickNum ===false && pickChar ===false && pickLower ===false && pickUpper ===false){
-          alert(" You must choose at least 1 type of password ");
+          alert(" You must choose at least 1 character type of password ");
         
         var pickNum = confirm ("would you like numbers in your password?");
       

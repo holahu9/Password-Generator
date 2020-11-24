@@ -37,6 +37,6 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 
 ## Mock-up
-asset/screen-shot.png
+link to screen shot:  asset/screen-shot.png
 link to deployed application:  https://holahu9.github.io/Password-Generator/index.html
 
