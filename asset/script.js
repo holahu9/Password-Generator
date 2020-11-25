@@ -25,26 +25,26 @@ function generatePassword(){
 
  // ask user to confirm character type of password they would like to include  
   
-        var pickNum = confirm ("would you like numbers in your password?");
+        var pickNum = confirm ("Would you like numbers in your password?.\n Cancel='No' || OK='Yes' ");
       
-        var pickChar = confirm ("would you like special characters in your password?");
+        var pickChar = confirm ("Would you like special characters in your password? \n Cancel='No' || OK='Yes' ");
         
-        var pickLower = confirm ("would you like lowercase characters in your password?");
+        var pickLower = confirm ("Would you like lowercase characters in your password? \n Cancel='No' || OK='Yes' ");
         
-        var pickUpper = confirm ("would you like uppercase characters in your password?");
+        var pickUpper = confirm ("Would you like uppercase characters in your password? \n Cancel='No' || OK='Yes' ");
 
 //loop obove questions if users dont pick any character type of password
         
         while(pickNum ===false && pickChar ===false && pickLower ===false && pickUpper ===false){
           alert(" You must choose at least 1 character type of password ");
         
-         pickNum = confirm ("would you like numbers in your password?");
+         pickNum = confirm ("Would you like numbers in your password? \n Cancel='No' || OK='Yes' ");
       
-         pickChar = confirm ("would you like special characters in your password?");
+         pickChar = confirm ("Would you like special characters in your password? \n Cancel='No' || OK='Yes' ");
         
-         pickLower = confirm ("would you like lowercase characters in your password?");
+         pickLower = confirm ("Would you like lowercase characters in your password? \n Cancel='No' || OK='Yes'");
         
-         pickUpper = confirm ("would you like uppercase characters in your password?");
+         pickUpper = confirm ("Would you like uppercase characters in your password? \n Cancel='No' || OK='Yes' ");
         }
 
         var yourPassword = [];
