@@ -10,11 +10,21 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  
 }
+
+h1{
+  color:white;
+}
+
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  
+  background-image: url(bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 .wrapper {
@@ -31,7 +41,7 @@ header {
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsl(99, 25%, 46%);
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
