@@ -17,6 +17,7 @@ var yourPassword = [];
 function generatePassword(){
     var passLength = prompt( "how many characters would you like to be in your password? ( choose from 8-128 characters)" );
     passLength = parseInt(passLength);
+// loop the question if users don't input a number in the range or it's not a number.
     while(passLength<8 || passLength>128 || isNaN(passLength)){
       alert("Your password must be between 8-128 characters. Please try again")
       var passLength = prompt( "how many characters would you like? ( choose from 8-128 characters)" );
